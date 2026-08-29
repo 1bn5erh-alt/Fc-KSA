@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#183322" />
+  <meta name="description" content="HOJE Specialty Coffee — قائمة القهوة والحلى" />
+  <title>HOJE | Specialty Coffee</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement"><span data-i18n="announce">قهوة مختصة • لحظتك بطريقتنا</span></div>
+
+  <header class="site-header" id="header">
+    <a href="#top" class="brand" aria-label="HOJE home">
+      <span class="brand-word">HOJE</span>
+      <span class="brand-sub">Specialty Coffee</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#menu" data-i18n="navMenu">القائمة</a>
+      <a href="#story" data-i18n="navStory">قصتنا</a>
+      <a href="#about" data-i18n="navAbout">عن هوجي</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn lang-btn" id="langToggle" aria-label="Change language">EN</button>
+      <button class="icon-btn cart-btn" id="openCart" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20.3 8H7.8M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-i18n="heroEyebrow">HOJE • SPECIALTY COFFEE</p>
+        <h1 data-i18n="heroTitle">مشروبك المفضل<br>بطريقتنا.</h1>
+        <p class="hero-text" data-i18n="heroText">تجربة قهوة بهوية طبيعية دافئة، من أول رشفة إلى آخر لحظة.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#menu" data-i18n="browseMenu">استكشف القائمة</a>
+          <a class="text-link" href="#story" data-i18n="discoverStory">اكتشف هوجي</a>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <img src="assets/hero-coffee.png" alt="HOJE specialty coffee cup" />
+        <div class="hero-badge">
+          <span>100%</span>
+          <small data-i18n="specialty">قهوة مختصة</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="story">
+      <div class="chapter-copy reveal">
+        <p class="eyebrow">CHAPTER ONE</p>
+        <h2 data-i18n="chapterTitle">كل كوب له لحظته</h2>
+        <p data-i18n="chapterText">من القهوة المقطرة إلى المشروبات الباردة والحلى، صممنا القائمة لتكون بسيطة، واضحة، وفاخرة مثل تجربة هوجي نفسها.</p>
+      </div>
+      <div class="chapter-media reveal">
+        <img src="assets/brand-story.png" alt="HOJE coffee collection" />
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow" data-i18n="menuEyebrow">OUR MENU</p>
+          <h2 data-i18n="menuTitle">اختر لحظتك</h2>
+        </div>
+        <p class="section-intro" data-i18n="menuIntro">23 منتجًا من ملف بياناتك، مرتبة تلقائيًا حسب النوع.</p>
+      </div>
+
+      <div class="filters-wrap reveal">
+        <div class="category-filters" id="categoryFilters"></div>
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+          <input id="searchInput" type="search" placeholder="ابحث في القائمة" data-placeholder-ar="ابحث في القائمة" data-placeholder-en="Search the menu" />
+        </label>
+      </div>
+
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <p data-i18n="empty">لا توجد نتائج مطابقة.</p>
+      </div>
+    </section>
+
+    <section class="feature-strip" id="about">
+      <article class="feature reveal">
+        <span class="feature-num">01</span>
+        <h3 data-i18n="feature1Title">هوية طبيعية</h3>
+        <p data-i18n="feature1Text">ألوان هادئة وتفاصيل مستوحاة من الجبال ومزارع القهوة.</p>
+      </article>
+      <article class="feature reveal">
+        <span class="feature-num">02</span>
+        <h3 data-i18n="feature2Title">قائمة واضحة</h3>
+        <p data-i18n="feature2Text">الاسم والسعر والسعرات في واجهة مباشرة وسريعة على الجوال.</p>
+      </article>
+      <article class="feature reveal">
+        <span class="feature-num">03</span>
+        <h3 data-i18n="feature3Title">جاهز للطلب</h3>
+        <p data-i18n="feature3Text">سلة مشتريات مدمجة قابلة للربط لاحقًا بالدفع والتوصيل.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <div class="footer-brand">HOJE</div>
+      <p>Specialty Coffee</p>
+    </div>
+    <div class="footer-links">
+      <a href="#menu" data-i18n="navMenu">القائمة</a>
+      <a href="#story" data-i18n="navStory">قصتنا</a>
+      <span>@hoje.coffee</span>
+    </div>
+    <p class="copyright">© <span id="year"></span> HOJE</p>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow" data-i18n="cartEyebrow">YOUR ORDER</p>
+        <h2 data-i18n="cartTitle">سلة الطلب</h2>
+      </div>
+      <button class="close-btn" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <p data-i18n="cartEmpty">السلة فارغة حاليًا.</p>
+      <button class="text-link" id="continueShopping" data-i18n="continueShopping">متابعة التسوق</button>
+    </div>
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-total-row">
+        <span data-i18n="total">الإجمالي</span>
+        <strong id="cartTotal">0 ر.س</strong>
+      </div>
+      <button class="primary-btn full" id="copyOrder" data-i18n="copyOrder">نسخ ملخص الطلب</button>
+      <small data-i18n="paymentNote">نسخة تجريبية — يمكن ربط الدفع والتوصيل في المرحلة التالية.</small>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="menu-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,56 +1,294 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FC KSA | FC 27 Intelligence</title>
+<meta name="description" content="FC KSA — لاعبين، أسعار، سوق، SBC، Evolutions وأدوات ذكية للعبة FC 27">
 <style>
-:root{--bg:#050b09;--panel:#0b1713;--line:#1c392d;--green:#55ef7b;--muted:#91a59b;--white:#f7faf8;--gold:#d7b64d}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% 0,#0c2a1b 0,transparent 28%),var(--bg);color:var(--white);font-family:Arial,Tahoma,sans-serif}a{color:inherit;text-decoration:none}.wrap{max-width:1380px;margin:auto;padding:0 24px}
-header{position:sticky;top:0;z-index:9;background:#050b09ee;border-bottom:1px solid #183226;backdrop-filter:blur(14px)}nav{height:70px;display:flex;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:11px;margin-left:auto;direction:ltr;font-size:25px;font-weight:1000}.brand img{width:43px;height:43px;border-radius:11px;object-fit:cover}.brand b{color:var(--green)}.links{display:flex;gap:24px;font-size:14px}.links a:first-child,.links a:hover{color:var(--green)}.login{margin-right:auto;border:1px solid #2b7045;background:#0c2016;color:var(--green);border-radius:10px;padding:9px 15px;font-weight:bold}
-.hero{padding:56px 0 44px;border-bottom:1px solid #10281d}.hero-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:center}.eyebrow{color:var(--green);font-size:13px;font-weight:900}.hero h1{font-size:56px;line-height:1.08;margin:12px 0}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);line-height:1.9;font-size:16px}.search{display:flex;background:#fff;border-radius:15px;padding:5px;margin-top:24px}.search input{flex:1;border:0;outline:0;padding:15px;background:transparent;font-size:15px}.search button{border:0;border-radius:11px;padding:0 25px;background:var(--green);font-weight:900;color:#06210d}.ai-card{border:1px solid #26503d;background:#091812;border-radius:24px;padding:18px;text-align:center;box-shadow:0 20px 70px #0007}.ai-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px}.ai-card h3{margin:15px 0 5px}.ai-card small{color:var(--muted)}
-.section{padding:27px 0 5px}.title{display:flex;align-items:end;justify-content:space-between;margin-bottom:14px}.title h2{margin:0;font-size:22px}.title p{color:var(--muted);font-size:12px;margin:6px 0 0}.more{color:var(--green);font-size:12px}
-.pulse{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.box{border:1px solid var(--line);background:linear-gradient(145deg,#0d1c16,#09130f);border-radius:17px;padding:16px}.box .tag{font-size:11px;font-weight:1000}.box h3{margin:12px 0 5px}.box small{color:var(--muted)}.price{font-size:20px;font-weight:1000;margin-top:12px}.up{color:var(--green)}.down{color:#ff6464}.yellow{color:#ffd05b}.purple{color:#aa79ff}.blue{color:#63bdff}
-.main-grid{display:grid;grid-template-columns:1fr 2.05fr;gap:15px}.panel{border:1px solid var(--line);background:#0a1612;border-radius:18px;padding:17px}.players{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.player{text-align:center}.fut{height:265px;border-radius:20px;padding:13px;color:#16130a;background:linear-gradient(145deg,#f3db7e,#c49b35 48%,#886916);clip-path:polygon(8% 0,92% 0,100% 10%,96% 87%,82% 100%,18% 100%,4% 87%,0 10%);position:relative;overflow:hidden}.fut.purple{background:linear-gradient(145deg,#5d3cb2,#201e67 65%,#101336);color:#fff}.rating{display:flex;justify-content:space-between;font-size:24px;font-weight:1000}.rating span:last-child{font-size:11px}.person{height:128px;position:relative}.head{position:absolute;width:58px;height:58px;top:15px;left:50%;transform:translateX(-50%);border-radius:50%;background:linear-gradient(145deg,#c99d79,#74523e)}.body{position:absolute;width:105px;height:84px;bottom:0;left:50%;transform:translateX(-50%);border-radius:52% 52% 10% 10%;background:linear-gradient(145deg,#f1f1f1,#6f7775)}.pname{font-size:15px;font-weight:1000;border-top:1px solid #0003;padding-top:8px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:8px;font-size:9px;font-weight:bold}.coin{font-size:12px;margin-top:8px;color:#e6ece8}
-.market .row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:13px 0;border-bottom:1px solid #183328}.market .row:last-child{border:0}.market b{font-size:13px}.market small{display:block;color:var(--muted);margin-top:3px}.market strong{font-size:13px}
-.lower{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:15px}.feature{min-height:165px}.feature .big{font-size:40px;margin:15px 0 6px;font-weight:1000;color:var(--green)}.score{width:88px;height:88px;border-radius:24px;background:#113720;border:1px solid #318951;display:grid;place-items:center;font-size:32px;color:var(--green);font-weight:1000;float:left}
-.notice{margin:25px 0;border:1px solid #244333;border-radius:14px;padding:14px;color:#8ca097;font-size:12px;text-align:center}footer{text-align:center;color:#65776f;font-size:11px;padding:20px 0 35px}
-@media(max-width:950px){.links{display:none}.hero-grid{grid-template-columns:1fr}.ai-card{display:none}.pulse{grid-template-columns:repeat(2,1fr)}.main-grid{grid-template-columns:1fr}.players{grid-template-columns:repeat(3,1fr)}.lower{grid-template-columns:1fr}}
-@media(max-width:600px){.wrap{padding:0 13px}.hero h1{font-size:37px}.pulse{grid-template-columns:1fr}.players{grid-template-columns:repeat(2,1fr)}.login{display:none}}
-</style></head>
+:root{
+  --bg:#06100d;--bg2:#091712;--panel:#0d1b16;--panel2:#10231c;--line:#1d3a2e;
+  --text:#f6faf7;--muted:#93a79d;--green:#58ef7c;--green2:#2dd65c;
+  --red:#ff6767;--gold:#f1c956;--purple:#a978ff;--blue:#64b9ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:
+linear-gradient(180deg,#050b09 0,#07110e 38%,#07120f 100%);color:var(--text)}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.container{max-width:1320px;margin:auto;padding:0 24px}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(4,10,8,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(88,239,124,.12)}
+.nav{height:72px;display:flex;align-items:center;gap:28px}
+.brand{margin-left:auto;display:flex;align-items:center;gap:10px;direction:ltr;font-size:30px;font-weight:1000;letter-spacing:-1px}
+.brand b{color:var(--green)}
+.brand small{display:block;font-size:9px;color:#91a39b;letter-spacing:1px;font-weight:700}
+.navlinks{display:flex;gap:24px;align-items:center}
+.navlinks a{font-size:14px;color:#d9e3de;padding:26px 0;border-bottom:2px solid transparent}
+.navlinks a:hover,.navlinks a.active{color:var(--green);border-bottom-color:var(--green)}
+.nav-actions{display:flex;gap:10px;margin-right:auto}
+.iconbtn{width:42px;height:42px;border:1px solid var(--line);background:#08120f;color:white;border-radius:12px;cursor:pointer}
+.login{border:1px solid var(--green);background:rgba(88,239,124,.09);color:var(--green);padding:10px 16px;border-radius:12px;font-weight:800}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(88,239,124,.08)}
+.hero:before{content:"";position:absolute;inset:-30% 50% auto -10%;height:520px;background:radial-gradient(circle,rgba(52,229,99,.18),transparent 68%);pointer-events:none}
+.hero-grid{min-height:390px;display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:center;padding-top:54px;padding-bottom:54px}
+.eyebrow{color:var(--green);font-weight:900;font-size:14px;letter-spacing:.5px}
+h1{font-size:54px;line-height:1.12;margin:12px 0 14px;letter-spacing:-1.5px}
+h1 span{color:var(--green)}
+.lead{font-size:17px;color:var(--muted);line-height:1.9;max-width:760px}
+.searchbar{margin-top:26px;display:flex;background:white;border-radius:16px;padding:5px;box-shadow:0 18px 50px rgba(0,0,0,.2)}
+.searchbar input{flex:1;border:0;outline:0;padding:15px 18px;color:#17201d;font-size:16px;background:transparent}
+.searchbar button{border:0;background:linear-gradient(135deg,var(--green),#8af29d);padding:0 28px;border-radius:12px;font-weight:900;color:#07230e;cursor:pointer}
+.quick{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.pill{border:1px solid var(--line);background:#0a1612;color:#bccbc4;border-radius:999px;padding:8px 13px;font-size:12px}
+.hero-visual{position:relative;min-height:280px}
+.glass{height:100%;min-height:280px;border:1px solid #244637;background:linear-gradient(145deg,rgba(18,48,35,.86),rgba(8,17,14,.9));border-radius:24px;padding:20px;position:relative;overflow:hidden}
+.glass:after{content:"FC27";position:absolute;left:-10px;bottom:-16px;font-size:84px;font-weight:1000;color:rgba(88,239,124,.055);transform:rotate(-90deg)}
+.feature-player{height:180px;border-radius:18px;background:radial-gradient(circle at 50% 34%,rgba(88,239,124,.35),transparent 24%),linear-gradient(160deg,#103c27,#07120f 70%);display:flex;align-items:end;justify-content:center;overflow:hidden}
+.silhouette{width:130px;height:160px;position:relative}
+.silhouette:before{content:"";position:absolute;top:10px;left:38px;width:55px;height:55px;border-radius:50%;background:linear-gradient(145deg,#ceb391,#7a5d43)}
+.silhouette:after{content:"";position:absolute;bottom:0;left:5px;width:120px;height:105px;border-radius:58% 58% 20% 20%/42% 42% 12% 12%;background:linear-gradient(145deg,#f1f1f1,#8c9b96)}
+.hero-card-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:16px}
+.hero-card-bottom strong{font-size:21px}.hero-card-bottom small{display:block;color:var(--muted);margin-top:6px}
+.ai-badge{background:rgba(88,239,124,.12);color:var(--green);border:1px solid rgba(88,239,124,.28);border-radius:10px;padding:8px 10px;font-weight:900}
+
+/* GLOBAL */
+.section{margin:25px 0}
+.section-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:14px}
+.section-title h2{margin:0;font-size:23px}.section-title p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.more{color:var(--green);font-size:13px}
+.card{background:linear-gradient(160deg,var(--panel),#0a1612);border:1px solid var(--line);border-radius:18px}
+.tag{font-size:11px;font-weight:1000;letter-spacing:.5px}.green{color:var(--green)}.red{color:var(--red)}.gold{color:var(--gold)}.purple{color:var(--purple)}.blue{color:var(--blue)}
+.muted{color:var(--muted)}
+
+/* PULSE */
+.pulse{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.pulse-card{padding:16px;min-height:150px;position:relative;overflow:hidden}
+.pulse-card:after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;left:-25px;bottom:-25px;background:rgba(255,255,255,.03)}
+.pulse-card .name{font-size:17px;font-weight:900;margin:12px 0 4px}
+.pulse-card .meta{font-size:12px;color:var(--muted)}
+.pulse-card .price{font-size:20px;font-weight:1000;margin-top:12px}
+.delta{font-size:12px;font-weight:900;margin-top:6px}
+
+/* CONTENT GRID */
+.dashboard{display:grid;grid-template-columns:.85fr 1.55fr .9fr;gap:15px}
+.panel{padding:17px}
+.market-tabs{display:flex;border:1px solid var(--line);border-radius:11px;padding:3px;margin-bottom:8px}
+.market-tabs span{flex:1;text-align:center;padding:8px;font-size:12px;border-radius:8px}
+.market-tabs .active{background:#123522;color:var(--green)}
+.row{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid rgba(39,73,59,.58)}
+.row:last-child{border-bottom:0}.rank{color:#6f857b}.rname{font-weight:800}.rmeta{font-size:11px;color:var(--muted);margin-top:3px}.rprice{text-align:left;font-weight:900}
+.chart{font-size:13px;color:var(--green);margin-top:4px}
+
+/* PLAYERS */
+.players{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.player-card{position:relative;min-height:250px;border-radius:18px;padding:13px;text-align:center;color:#131313;overflow:hidden;background:
+linear-gradient(150deg,#f1dc90,#c49933 48%,#8f6a16);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.player-card.special{background:linear-gradient(150deg,#231c5d,#4d2d8b 55%,#141b45);color:#fff}
+.player-card.black{background:linear-gradient(150deg,#1d1b17,#4f3b16 60%,#0c0b09);color:#fff}
+.player-rating{display:flex;justify-content:space-between;font-weight:1000;font-size:24px}
+.position{font-size:11px}
+.player-photo{height:120px;display:flex;align-items:end;justify-content:center;position:relative}
+.player-photo .head{position:absolute;top:18px;width:54px;height:54px;border-radius:50%;background:linear-gradient(145deg,#b78b66,#73513c)}
+.player-photo .body{position:absolute;bottom:0;width:92px;height:76px;border-radius:48% 48% 10% 10%;background:linear-gradient(145deg,#f0f1f1,#737e7b)}
+.player-card.special .body{background:linear-gradient(145deg,#264fc0,#141a65)}
+.player-name{font-size:15px;font-weight:1000;border-top:1px solid rgba(0,0,0,.12);padding-top:8px}
+.player-card.special .player-name,.player-card.black .player-name{border-top-color:rgba(255,255,255,.16)}
+.player-info{font-size:10px;opacity:.8;margin-top:5px}
+.market-price{color:#f3f6f4;text-align:center;margin-top:8px;font-size:13px}
+
+/* NEWS */
+.news-item{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid rgba(39,73,59,.58)}
+.news-item:last-child{border:0}.news-thumb{width:82px;height:58px;flex:0 0 82px;border-radius:10px;background:linear-gradient(135deg,#1e6b3c,#111c18);display:grid;place-items:center;font-size:26px}
+.news-title{font-weight:800;font-size:13px;line-height:1.5}.news-time{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* LOWER */
+.lower-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:15px}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mini{padding:14px;background:#102019;border:1px solid #244233;border-radius:13px;min-height:110px}
+.mini .ico{font-size:28px;margin-bottom:8px}.mini strong{display:block;font-size:14px}.mini small{display:block;color:var(--muted);margin-top:6px}
+.evo-box{display:flex;gap:14px;align-items:center}
+.evo-icon{width:90px;height:110px;border-radius:18px;background:linear-gradient(160deg,#6d2ca5,#21134b);display:grid;place-items:center;font-size:40px;border:1px solid #9b55c6}
+.score-box{display:flex;justify-content:space-between;align-items:center}
+.score{font-size:58px;font-weight:1000;color:var(--green)}
+.score-circle{width:100px;height:100px;border-radius:26px;background:linear-gradient(145deg,#17482a,#0f281b);border:1px solid #2c8147;display:grid;place-items:center;font-size:34px;font-weight:1000;color:var(--green)}
+
+/* FOOT */
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:26px 0}
+.benefit{background:#0c1814;padding:17px;text-align:center}.benefit b{font-size:13px}.benefit small{display:block;color:var(--muted);margin-top:5px}
+footer{padding:30px 0 40px;color:#6f8179;text-align:center;font-size:12px}
+
+@media(max-width:1050px){
+ .dashboard{grid-template-columns:1fr 1fr}.dashboard .panel:nth-child(2){grid-column:1/-1;grid-row:1}
+ .pulse{grid-template-columns:repeat(3,1fr)}.players{grid-template-columns:repeat(5,1fr)}
+}
+@media(max-width:850px){
+ .navlinks{display:none}.hero-grid{grid-template-columns:1fr}.hero-visual{display:none}
+ h1{font-size:40px}.pulse{grid-template-columns:repeat(2,1fr)}
+ .dashboard,.lower-grid{grid-template-columns:1fr}.dashboard .panel:nth-child(2){grid-column:auto;grid-row:auto}
+ .benefits{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+ .container{padding:0 14px}.nav{height:64px}.brand{font-size:25px}.nav-actions .login{display:none}
+ h1{font-size:34px}.lead{font-size:15px}.searchbar button{padding:0 15px}
+ .pulse{grid-template-columns:1fr}.players{grid-template-columns:repeat(2,1fr)}
+ .mini-grid{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}
+ .section-title h2{font-size:20px}
+}
+</style>
+</head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="#"><img src="fc-ksa-logo.png"><span>FC <b>KSA</b></span></a><div class="links"><a href="#">الرئيسية</a><a href="#players">اللاعبون</a><a href="#market">السوق</a><a href="#sbc">SBC</a><a href="#evo">Evolutions</a><a href="#">بناء التشكيلة</a><a href="#">الأخبار</a></div><button class="login">تسجيل الدخول</button></nav></div></header>
-<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">FC 27 INTELLIGENCE · 🇸🇦</div><h1>مساعدك الذكي في <span>FC 27</span></h1><p>اللاعبون، السوق، SBC، Evolutions وتحليلات FC KSA AI في مكان واحد. هدفنا أن تعرف ماذا تشتري، ماذا تبيع، وأين تصرف كوينزك.</p><form class="search" onsubmit="event.preventDefault();alert('سنربط البحث بقاعدة البيانات في المرحلة القادمة');"><input placeholder="مثال: أفضل ST تحت 200K"><button>اسأل FC KSA</button></form></div><div class="ai-card"><img src="fc-ksa-logo.png"><h3>FC KSA AI</h3><small>المعلومة المهمة بدون تعقيد.</small></div></div></section>
-<main class="wrap">
-<section class="section"><div class="title"><div><h2>⚡ AI PULSE</h2><p>قرارات سريعة مبنية على حركة السوق والمحتوى</p></div><a class="more">عرض الكل</a></div><div class="pulse">
-<div class="box"><div class="tag up">BUY NOW</div><h3>Raphinha</h3><small>RW · Barcelona</small><div class="price">154K</div><div class="up">↑ 8.2%</div></div>
-<div class="box"><div class="tag down">SELL NOW</div><h3>João Félix</h3><small>CF</small><div class="price">87K</div><div class="down">↓ 12.7%</div></div>
-<div class="box"><div class="tag yellow">BEST SBC</div><h3>87+ Upgrade</h3><small>قيمة ممتازة</small><div class="price">68K</div></div>
-<div class="box"><div class="tag purple">BEST EVO</div><h3>Relentless Winger</h3><small>تطوير جناح</small><div class="price">92 OVR</div></div>
-<div class="box"><div class="tag blue">TRENDING</div><h3>Lamine Yamal</h3><small>RW · Barcelona</small><div class="price up">+320%</div></div>
-</div></section>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#"><div>FC <b>KSA</b><small>FC 27 INTELLIGENCE</small></div></a>
+    <nav class="navlinks">
+      <a class="active" href="#">الرئيسية</a>
+      <a href="#players">اللاعبون</a>
+      <a href="#market">السوق</a>
+      <a href="#sbc">SBC</a>
+      <a href="#evo">Evolutions</a>
+      <a href="#squad">بناء التشكيلة</a>
+      <a href="#news">الأخبار</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="iconbtn" title="بحث">⌕</button>
+      <button class="login">تسجيل الدخول</button>
+    </div>
+  </div>
+</header>
 
-<section class="section main-grid">
-<div class="panel market" id="market"><div class="title"><div><h2>📈 السوق</h2><p>الأكثر ارتفاعاً</p></div></div>
-<div class="row"><div><b>Camavinga</b><small>CM · Real Madrid</small></div><strong class="up">82K +18%</strong></div>
-<div class="row"><div><b>Griezmann</b><small>ST</small></div><strong class="up">58K +15%</strong></div>
-<div class="row"><div><b>Kudus</b><small>RW</small></div><strong class="up">45K +13%</strong></div>
-<div class="row"><div><b>Barella</b><small>CM</small></div><strong class="up">110K +11%</strong></div>
-<div class="row"><div><b>Hernández</b><small>LB</small></div><strong class="up">63K +10%</strong></div></div>
-
-<div class="panel" id="players"><div class="title"><div><h2>🔥 أشهر اللاعبين</h2><p>تصميم بطاقة FC KSA — سيتم استبدال الصور التجريبية بصور مرخّصة للاعبين</p></div><a class="more">كل اللاعبين</a></div><div class="players">
-<div class="player"><div class="fut"><div class="rating"><span>91</span><span>ST</span></div><div class="person"><i class="head"></i><i class="body"></i></div><div class="pname">MBAPPÉ</div><div class="stats"><span>97 PAC</span><span>92 SHO</span><span>84 PAS</span><span>93 DRI</span><span>42 DEF</span><span>78 PHY</span></div></div><div class="coin">1,240,000 🪙</div></div>
-<div class="player"><div class="fut"><div class="rating"><span>90</span><span>CAM</span></div><div class="person"><i class="head"></i><i class="body"></i></div><div class="pname">BELLINGHAM</div><div class="stats"><span>82 PAC</span><span>87 SHO</span><span>89 PAS</span><span>90 DRI</span><span>78 DEF</span><span>84 PHY</span></div></div><div class="coin">890,000 🪙</div></div>
-<div class="player"><div class="fut purple"><div class="rating"><span>89</span><span>LW</span></div><div class="person"><i class="head"></i><i class="body"></i></div><div class="pname">VINI JR.</div><div class="stats"><span>96 PAC</span><span>86 SHO</span><span>82 PAS</span><span>94 DRI</span><span>32 DEF</span><span>70 PHY</span></div></div><div class="coin">780,000 🪙</div></div>
-<div class="player"><div class="fut"><div class="rating"><span>89</span><span>RW</span></div><div class="person"><i class="head"></i><i class="body"></i></div><div class="pname">SALAH</div><div class="stats"><span>89 PAC</span><span>90 SHO</span><span>84 PAS</span><span>88 DRI</span><span>45 DEF</span><span>76 PHY</span></div></div><div class="coin">650,000 🪙</div></div>
-<div class="player"><div class="fut"><div class="rating"><span>88</span><span>CM</span></div><div class="person"><i class="head"></i><i class="body"></i></div><div class="pname">VALVERDE</div><div class="stats"><span>88 PAC</span><span>82 SHO</span><span>86 PAS</span><span>85 DRI</span><span>83 DEF</span><span>89 PHY</span></div></div><div class="coin">420,000 🪙</div></div>
-</div></div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">FC KSA · كل شيء عن FC 27</div>
+      <h1>اعرف السوق. اختر اللاعب.<br><span>والعب بذكاء.</span></h1>
+      <p class="lead">قاعدة لاعبين، أسعار، SBC، Evolutions، تحركات السوق وأدوات ذكية — كل ما تحتاجه في مكان واحد وبواجهة عربية بسيطة.</p>
+      <form class="searchbar" onsubmit="event.preventDefault(); alert('قريباً: البحث الذكي سيعمل من قاعدة بيانات FC KSA');">
+        <input placeholder="ابحث عن لاعب... أو اسأل FC KSA">
+        <button type="submit">اسأل FC KSA</button>
+      </form>
+      <div class="quick">
+        <span class="pill">أفضل ST تحت 200K</span>
+        <span class="pill">أفضل SBC اليوم</span>
+        <span class="pill">أكثر اللاعبين ارتفاعاً</span>
+        <span class="pill">أفضل EVO</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="glass">
+        <div class="feature-player"><div class="silhouette"></div></div>
+        <div class="hero-card-bottom">
+          <div><strong>FC KSA AI</strong><small>اختيارات ذكية بدون تعقيد</small></div>
+          <div class="ai-badge">AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="lower">
-<div class="panel feature" id="sbc"><div class="tag yellow">SBC</div><h2>🧩 87+ Upgrade</h2><div class="big">68K</div><small>التكلفة الحالية التجريبية</small></div>
-<div class="panel feature" id="evo"><div class="tag purple">EVOLUTION</div><h2>✦ Relentless Winger</h2><div class="big">92</div><small>Max OVR</small></div>
-<div class="panel feature"><div class="score">94</div><div class="tag up">FC KSA SCORE</div><h2>Mbappé</h2><small>Meta + Stats + Value + Market</small></div>
-</section>
-<div class="notice">⚠️ النسخة الحالية واجهة تجريبية. الأسعار والإحصائيات ليست بيانات حية بعد. المرحلة القادمة: قاعدة البيانات + التحديث التلقائي + مصدر صور اللاعبين.</div>
-</main><footer>FC KSA · FC 27 Intelligence</footer>
-</body></html>
+<main class="container">
+  <section class="section">
+    <div class="section-title">
+      <div><h2>⚡ AI PULSE</h2><p>أهم ما يحدث في FC 27 الآن.</p></div><a class="more" href="#">عرض الكل</a>
+    </div>
+    <div class="pulse">
+      <div class="card pulse-card"><div class="tag green">BUY NOW</div><div class="name">Raphinha</div><div class="meta">RW · Barcelona</div><div class="price">154K</div><div class="delta green">↑ 8.2% · سعر شراء ممتاز</div></div>
+      <div class="card pulse-card"><div class="tag red">SELL NOW</div><div class="name">João Félix</div><div class="meta">CF</div><div class="price">87K</div><div class="delta red">↓ 12.7% · ضغط نزول</div></div>
+      <div class="card pulse-card"><div class="tag gold">BEST SBC</div><div class="name">87+ Upgrade</div><div class="meta">قيمة ممتازة مقابل التكلفة</div><div class="price">68K</div></div>
+      <div class="card pulse-card"><div class="tag purple">BEST EVO</div><div class="name">Relentless Winger</div><div class="meta">تطوير للجناح</div><div class="price">92 OVR</div></div>
+      <div class="card pulse-card"><div class="tag blue">TRENDING</div><div class="name">Lamine Yamal</div><div class="meta">RW · Barcelona</div><div class="delta green">↑ 320% عمليات البحث</div></div>
+    </div>
+  </section>
+
+  <section class="section dashboard">
+    <div class="card panel" id="market">
+      <div class="section-title"><div><h2>📈 تحركات السوق</h2><p>الأكثر ارتفاعاً اليوم</p></div></div>
+      <div class="market-tabs"><span class="active">ارتفاع</span><span>انخفاض</span></div>
+      <div class="row"><span class="rank">1</span><div><div class="rname">Camavinga</div><div class="rmeta">CM · Real Madrid</div></div><div class="rprice">82K<div class="chart">↗ +18.4%</div></div></div>
+      <div class="row"><span class="rank">2</span><div><div class="rname">Griezmann</div><div class="rmeta">ST · Atlético</div></div><div class="rprice">58K<div class="chart">↗ +15.6%</div></div></div>
+      <div class="row"><span class="rank">3</span><div><div class="rname">Kudus</div><div class="rmeta">RW</div></div><div class="rprice">45K<div class="chart">↗ +13.2%</div></div></div>
+      <div class="row"><span class="rank">4</span><div><div class="rname">Barella</div><div class="rmeta">CM</div></div><div class="rprice">110K<div class="chart">↗ +11.8%</div></div></div>
+      <div class="row"><span class="rank">5</span><div><div class="rname">Hernández</div><div class="rmeta">LB</div></div><div class="rprice">63K<div class="chart">↗ +10.3%</div></div></div>
+    </div>
+
+    <div class="card panel" id="players">
+      <div class="section-title"><div><h2>🔥 اللاعبون الأكثر تداولاً</h2><p>الأكثر بحثاً ومتابعة</p></div><a class="more" href="#">عرض الكل</a></div>
+      <div class="players">
+        <div><div class="player-card"><div class="player-rating"><span>91</span><span class="position">ST</span></div><div class="player-photo"><i class="head"></i><i class="body"></i></div><div class="player-name">Mbappé</div><div class="player-info">France · Real Madrid</div></div><div class="market-price">1,240,000 🪙</div></div>
+        <div><div class="player-card"><div class="player-rating"><span>90</span><span class="position">CAM</span></div><div class="player-photo"><i class="head"></i><i class="body"></i></div><div class="player-name">Bellingham</div><div class="player-info">England · Real Madrid</div></div><div class="market-price">890,000 🪙</div></div>
+        <div><div class="player-card special"><div class="player-rating"><span>89</span><span class="position">LW</span></div><div class="player-photo"><i class="head"></i><i class="body"></i></div><div class="player-name">Vini Jr.</div><div class="player-info">Brazil · Real Madrid</div></div><div class="market-price">780,000 🪙</div></div>
+        <div><div class="player-card"><div class="player-rating"><span>89</span><span class="position">RW</span></div><div class="player-photo"><i class="head"></i><i class="body"></i></div><div class="player-name">Salah</div><div class="player-info">Egypt · Liverpool</div></div><div class="market-price">650,000 🪙</div></div>
+        <div><div class="player-card black"><div class="player-rating"><span>88</span><span class="position">CM</span></div><div class="player-photo"><i class="head"></i><i class="body"></i></div><div class="player-name">Valverde</div><div class="player-info">Uruguay · Real Madrid</div></div><div class="market-price">420,000 🪙</div></div>
+      </div>
+    </div>
+
+    <div class="card panel" id="news">
+      <div class="section-title"><div><h2>📰 آخر الأخبار</h2><p>FC 27 و Ultimate Team</p></div><a class="more" href="#">الكل</a></div>
+      <div class="news-item"><div class="news-thumb">⚽</div><div><div class="news-title">أحدث أخبار وتحديثات FC 27</div><div class="news-time">سيتم ربطها تلقائياً بالمصادر</div></div></div>
+      <div class="news-item"><div class="news-thumb">🏆</div><div><div class="news-title">Team of the Week</div><div class="news-time">بطاقات ومحتوى جديد</div></div></div>
+      <div class="news-item"><div class="news-thumb">✨</div><div><div class="news-title">Ultimate Team</div><div class="news-time">SBC و Evolutions الجديدة</div></div></div>
+    </div>
+  </section>
+
+  <section class="section lower-grid">
+    <div class="card panel" id="sbc">
+      <div class="section-title"><div><h2>🧩 أحدث SBCs</h2><p>التحديات الجديدة</p></div><a class="more" href="#">عرض الكل</a></div>
+      <div class="mini-grid">
+        <div class="mini"><div class="ico">87+</div><strong>87+ Upgrade</strong><small>التكلفة: 68K 🪙</small></div>
+        <div class="mini"><div class="ico">🎴</div><strong>Player Pick</strong><small>التكلفة: 21K 🪙</small></div>
+        <div class="mini"><div class="ico">⚔️</div><strong>Marquee Matchups</strong><small>التكلفة: 18K 🪙</small></div>
+      </div>
+    </div>
+    <div class="card panel" id="evo">
+      <div class="section-title"><div><h2>🧬 Evolution</h2><p>أفضل تطوير حالي</p></div></div>
+      <div class="evo-box"><div class="evo-icon">✦</div><div><div class="tag purple">BEST EVO</div><h3 style="margin:8px 0">Relentless Winger</h3><div class="muted" style="font-size:12px">Max OVR 92 · تطوير جناح</div></div></div>
+    </div>
+  </section>
+
+  <section class="section lower-grid">
+    <div class="card panel" id="squad">
+      <div class="section-title"><div><h2>🧠 FC KSA SCORE</h2><p>تقييمنا الذكي لقيمة اللاعب</p></div></div>
+      <div class="score-box"><div><h3 style="margin:0 0 8px">Mbappé</h3><div class="muted">Meta + Value + Stats + Market</div></div><div class="score-circle">94</div></div>
+    </div>
+    <div class="card panel">
+      <div class="section-title"><div><h2>🤖 Ask FC KSA</h2><p>البحث الطبيعي بالذكاء الاصطناعي</p></div></div>
+      <div class="score" style="font-size:34px">قريباً</div><div class="muted">اكتب: أفضل مهاجم تحت 200 ألف، والموقع يبحث لك تلقائياً.</div>
+    </div>
+  </section>
+
+  <div class="benefits">
+    <div class="benefit"><b>⚡ تحديث مستمر</b><small>بيانات ومحتوى بشكل آلي</small></div>
+    <div class="benefit"><b>🧠 تحليلات ذكية</b><small>اختيارات أسرع وأوضح</small></div>
+    <div class="benefit"><b>📱 سهل على الجوال</b><small>واجهة متجاوبة بالكامل</small></div>
+    <div class="benefit"><b>🇸🇦 عربي أولاً</b><small>مصمم لمجتمع FC العربي</small></div>
+  </div>
+</main>
+
+<footer><div class="container">FC KSA · Prototype V2 · البيانات الحالية تجريبية وستُربط بالمصادر لاحقاً</div></footer>
+
+<script>
+const FCKSA_API="https://nxyrvycpcwwotceftqvv.supabase.co/rest/v1",FCKSA_KEY="sb_publishable_QRDQKj5hLBPeCignloHfKg_k2bL0xPX";
+async function loadFCKSA(){
+ const r=await fetch(FCKSA_API+"/players?select=*&order=rating.desc",{headers:{apikey:FCKSA_KEY,Authorization:"Bearer "+FCKSA_KEY}});
+ if(!r.ok) throw new Error("Supabase "+r.status);
+ const p=await r.json(); window.FC_KSA_PLAYERS=p;
+ console.log("FC KSA players:",p);
+ const h=[...document.querySelectorAll("h1,h2,h3,h4")].find(x=>x.textContent.includes("أشهر اللاعبين"));
+ if(!h||!p.length)return;
+ let box=null,s=h.closest("section")||h.parentElement;
+ for(const d of s.querySelectorAll("div")){let t=d.textContent.toUpperCase();if(t.includes("MBAPP")&&t.includes("BELLINGHAM")&&d.children.length>=3&&d.children.length<=8)box=d;}
+ if(!box)return;
+ const e=x=>String(x??"").replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]);
+ box.innerHTML=p.slice(0,5).map(x=>`<article style="min-width:150px;flex:1;background:linear-gradient(160deg,#e8ca62,#b98d16);color:#10130f;border-radius:18px;padding:16px 12px;text-align:center"><div style="display:flex;justify-content:space-between;font-weight:900"><span>${e(x.position)}</span><span style="font-size:26px">${e(x.rating)}</span></div><div style="height:105px;display:flex;align-items:end;justify-content:center">${x.player_image?`<img src="${e(x.player_image)}" style="max-width:110px;max-height:105px;object-fit:contain">`:`<div style="font-size:70px">👤</div>`}</div><div style="font-size:17px;font-weight:950;margin:8px 0">${e(x.name).toUpperCase()}</div><div style="font-size:11px">${e(x.club)} · ${e(x.league)}</div><div style="margin-top:12px;font-weight:900">🪙 ${Number(x.price||0).toLocaleString("en-US")}</div><div style="font-size:11px;margin-top:5px">FC KSA SCORE: <b>${e(x.fc_ksa_score??"-")}</b></div></article>`).join("");
+ box.style.display="flex";box.style.gap="12px";box.style.flexWrap="wrap";
+ const b=document.createElement("div");b.textContent="● بيانات اللاعبين متصلة مباشرة بقاعدة FC KSA";b.style.cssText="color:#55ef83;font-size:12px;margin:8px 0 14px;text-align:right";h.after(b);
+}
+document.addEventListener("DOMContentLoaded",()=>loadFCKSA().catch(console.error));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="FC KSA - لاعبين وأسعار وSBC وEvolutions وAI Pulse">
+  <title>FC KSA</title>
+  <style>
+    :root{
+      --bg:#06110d;--bg2:#0a1913;--panel:#0d2119;--panel2:#10291f;
+      --line:#1e4334;--green:#47f08b;--green2:#1bb968;--text:#f4fff8;
+      --muted:#8ca99a;--gold:#d6b452;--purple:#bb83ff;--danger:#ff6f75;
+      --shadow:0 18px 50px rgba(0,0,0,.25)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:
+      radial-gradient(circle at 80% -10%,rgba(45,180,105,.16),transparent 35%),
+      linear-gradient(180deg,var(--bg),#04100c 50%,#07130f);
+      color:var(--text);font-family:Tahoma,Arial,sans-serif}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1180px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(4,14,10,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:22px}
+    .brand-badge{width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,var(--green),#12a75e);display:grid;place-items:center;color:#03110a;box-shadow:0 0 30px rgba(71,240,139,.18)}
+    .links{display:flex;gap:18px;color:#b9d0c4;font-size:14px;flex-wrap:wrap}
+    .links a:hover{color:var(--green)}
+    .hero{padding:72px 0 46px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #1d4935;background:#0b2117;color:var(--green);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800}
+    h1{font-size:clamp(38px,6vw,72px);line-height:1.05;margin:18px 0 16px;letter-spacing:-2px}
+    h1 span{color:var(--green)}
+    .hero p{color:var(--muted);font-size:18px;line-height:1.9;max-width:700px}
+    .search{margin-top:26px;display:flex;gap:10px;background:#0a1d15;border:1px solid #19392c;border-radius:16px;padding:8px}
+    .search input{flex:1;border:0;outline:0;background:transparent;color:white;padding:11px 12px;font-size:15px}
+    .search button,.btn{border:0;border-radius:12px;background:var(--green);color:#031109;font-weight:900;padding:12px 18px;cursor:pointer}
+    .hero-card{background:linear-gradient(150deg,#10291f,#091b14);border:1px solid #1a3a2d;border-radius:28px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero-card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(71,240,139,.08);left:-50px;bottom:-60px;filter:blur(2px)}
+    .pulse-list{display:grid;gap:10px;margin-top:18px}
+    .pulse-item{display:flex;justify-content:space-between;align-items:center;padding:14px;border:1px solid #1b3e30;background:#0b1e17;border-radius:14px}
+    .tag{font-size:10px;font-weight:900;border-radius:999px;padding:6px 8px;display:inline-block}
+    .buy{color:#06140c;background:var(--green)}
+    .sell{color:white;background:#c44d55}
+    .purple{background:#6a3fa1;color:white}
+    .section{padding:26px 0}
+    .section-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:16px}
+    .section-title h2{margin:0 0 7px;font-size:27px}
+    .section-title p{margin:0;color:var(--muted);font-size:13px}
+    .section-title a{font-size:13px;color:var(--green)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .card{background:linear-gradient(180deg,var(--panel),#0a1a14);border:1px solid #17392b;border-radius:20px;box-shadow:var(--shadow)}
+    .panel{padding:20px}
+    .market{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .market strong{font-size:18px}
+    .up{color:var(--green)} .down{color:var(--danger)}
+    .players{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .player-card{background:linear-gradient(160deg,#e9cb67,#b88a13);color:#0e120e;border-radius:22px;padding:14px 12px;text-align:center;position:relative;overflow:hidden;min-height:285px;transition:.2s}
+    .player-card:hover{transform:translateY(-4px)}
+    .player-top{display:flex;justify-content:space-between;align-items:start;font-weight:900}
+    .rating{font-size:29px;line-height:1}
+    .position{font-size:13px}
+    .player-photo{height:130px;display:flex;align-items:flex-end;justify-content:center;margin:2px 0 4px}
+    .player-photo img{max-width:135px;max-height:128px;object-fit:contain;filter:drop-shadow(0 10px 8px rgba(0,0,0,.2))}
+    .fallback{font-size:78px;line-height:1}
+    .player-name{font-size:17px;font-weight:950;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .player-meta{font-size:11px;opacity:.72;margin-top:5px;min-height:28px}
+    .price{margin-top:10px;font-weight:900}
+    .score{font-size:10px;margin-top:5px}
+    .live{color:var(--green);font-size:12px;margin:9px 0 14px;text-align:right}
+    .evo-box,.score-box{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#0b1d16;border:1px solid #183b2d;border-radius:16px;padding:18px}
+    .evo-icon{font-size:48px;color:var(--purple)}
+    .score-circle{width:74px;height:74px;border:8px solid var(--green);border-radius:50%;display:grid;place-items:center;font-weight:950;font-size:22px}
+    .muted{color:var(--muted)}
+    .news{display:grid;grid-template-columns:2fr 1fr 1fr;gap:15px}
+    .news article{padding:20px;min-height:150px}
+    footer{margin-top:45px;padding:34px 0;border-top:1px solid #153327;color:#789688;font-size:12px}
+    .status{font-size:12px;color:var(--muted);margin-top:10px}
+    @media(max-width:950px){
+      .hero-grid,.lower-grid{grid-template-columns:1fr}
+      .players{grid-template-columns:repeat(2,1fr)}
+      .grid-3,.news{grid-template-columns:1fr}
+      .links{display:none}
+    }
+    @media(max-width:520px){.players{grid-template-columns:1fr 1fr}.player-card{min-height:255px}.player-photo{height:105px}.player-photo img{max-height:103px}h1{letter-spacing:-1px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><span class="brand-badge">FC</span><span>FC KSA</span></a>
+    <nav class="links">
+      <a href="#">الرئيسية</a><a href="#players">اللاعبون</a><a href="#market">السوق</a>
+      <a href="#sbc">SBC</a><a href="#evo">Evolutions</a><a href="#squad">بناء التشكيلة</a><a href="#news">الأخبار</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">● AI PULSE مباشر من FC KSA</div>
+        <h1>اعرف السوق.<br>اختر اللاعب.<br><span>والعب بذكاء.</span></h1>
+        <p>منصة سعودية تساعدك على متابعة اللاعبين والأسعار وSBC وEvolutions مع طبقة تحليل ذكية لاتخاذ القرار أسرع.</p>
+        <div class="search">
+          <input id="ask" placeholder="اسأل FC KSA: أفضل ST تحت 200K">
+          <button onclick="fakeAsk()">اسأل</button>
+        </div>
+        <div id="askAnswer" class="status"></div>
+      </div>
+      <aside class="hero-card">
+        <div class="section-title"><div><h2>⚡ AI PULSE</h2><p>إشارات سريعة من السوق</p></div><span class="tag buy">LIVE</span></div>
+        <div class="pulse-list">
+          <div class="pulse-item"><span><b>Mbappé</b><br><small class="muted">قوة ميتا + طلب مرتفع</small></span><span class="tag buy">BUY</span></div>
+          <div class="pulse-item"><span><b>Valverde</b><br><small class="muted">قيمة جيدة مقابل السعر</small></span><span class="tag buy">WATCH</span></div>
+          <div class="pulse-item"><span><b>Salah</b><br><small class="muted">راقب اتجاه السعر</small></span><span class="tag sell">SELL?</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="market">
+    <div class="section-title"><div><h2>📈 تحركات السوق</h2><p>نظرة سريعة على أبرز التغيرات</p></div><a href="#">عرض السوق</a></div>
+    <div class="grid-3">
+      <div class="card panel market"><div><strong>Mbappé</strong><div class="muted">Real Madrid</div></div><div class="up">▲ 4.8%</div></div>
+      <div class="card panel market"><div><strong>Bellingham</strong><div class="muted">Real Madrid</div></div><div class="up">▲ 2.4%</div></div>
+      <div class="card panel market"><div><strong>Salah</strong><div class="muted">Liverpool</div></div><div class="down">▼ 1.7%</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="players">
+    <div class="section-title">
+      <div><h2>🔥 اللاعبون الأكثر تداولاً</h2><p>الأكثر بحثاً ومتابعة</p></div>
+      <a href="#">عرض الكل</a>
+    </div>
+    <div id="playersLive" class="live">● جاري الاتصال بقاعدة FC KSA...</div>
+    <div class="players" id="playersGrid"></div>
+  </section>
+
+  <section class="section lower-grid">
+    <div class="card panel" id="sbc">
+      <div class="section-title"><div><h2>🧩 SBC</h2><p>اختيار ذكي للقيمة مقابل التكلفة</p></div></div>
+      <div class="evo-box"><div><div class="tag buy">BEST VALUE</div><h3 style="margin:8px 0">Featured SBC</h3><div class="muted" style="font-size:12px">التقييم الذكي سيتحدث من البيانات لاحقاً</div></div><div style="font-size:46px">✓</div></div>
+    </div>
+    <div class="card panel" id="evo">
+      <div class="section-title"><div><h2>🧬 Evolution</h2><p>أفضل تطوير حالي</p></div></div>
+      <div class="evo-box"><div class="evo-icon">✦</div><div><div class="tag purple">BEST EVO</div><h3 style="margin:8px 0">Relentless Winger</h3><div class="muted" style="font-size:12px">Max OVR 92 · تطوير جناح</div></div></div>
+    </div>
+  </section>
+
+  <section class="section lower-grid">
+    <div class="card panel" id="squad">
+      <div class="section-title"><div><h2>🧠 FC KSA SCORE</h2><p>تقييمنا الذكي لقيمة اللاعب</p></div></div>
+      <div class="score-box"><div><h3 id="scoreName" style="margin:0 0 8px">Mbappé</h3><div class="muted">Meta + Value + Stats + Market</div></div><div id="scoreValue" class="score-circle">94</div></div>
+    </div>
+    <div class="card panel">
+      <div class="section-title"><div><h2>🤖 Ask FC KSA</h2><p>بحث طبيعي لاتخاذ القرار</p></div></div>
+      <p class="muted" style="line-height:1.8">قريباً: اسأل عن مركز أو ميزانية أو نوع لاعب، ونرتب لك الخيارات من قاعدة البيانات.</p>
+    </div>
+  </section>
+
+  <section class="section" id="news">
+    <div class="section-title"><div><h2>📰 الأخبار</h2><p>آخر تحديثات FC KSA</p></div></div>
+    <div class="news">
+      <article class="card"><h3>FC KSA يتصل الآن بقاعدة اللاعبين</h3><p class="muted">الخطوة الأولى نحو تحديث تلقائي للموقع.</p></article>
+      <article class="card"><h3>AI PULSE</h3><p class="muted">طبقة التحليل القادمة للسوق واللاعبين.</p></article>
+      <article class="card"><h3>Squad Builder</h3><p class="muted">سيتم تطويره كمرحلة لاحقة.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">FC KSA © 2026 · صور اللاعبين يتم تحميلها من الروابط المخزنة في قاعدة البيانات. عند استخدام صور مرخصة من Wikimedia Commons يجب إضافة نسب المصدر والترخيص المناسب قبل الإطلاق العام.</div>
+</footer>
+
+<script>
+const FCKSA_API="https://nxyrvycpcwwotceftqvv.supabase.co/rest/v1";
+const FCKSA_KEY="sb_publishable_QRDQKj5hLBPeCignloHfKg_k2bL0xPX";
+
+const fallbackPlayers=[
+ {name:"Mbappé",rating:91,position:"ST",club:"Real Madrid",league:"LaLiga",nation:"France",price:1240000,fc_ksa_score:94},
+ {name:"Bellingham",rating:90,position:"CAM",club:"Real Madrid",league:"LaLiga",nation:"England",price:890000,fc_ksa_score:92},
+ {name:"Vini Jr.",rating:89,position:"LW",club:"Real Madrid",league:"LaLiga",nation:"Brazil",price:780000,fc_ksa_score:91},
+ {name:"Salah",rating:89,position:"RW",club:"Liverpool",league:"Premier League",nation:"Egypt",price:650000,fc_ksa_score:90},
+ {name:"Valverde",rating:88,position:"CM",club:"Real Madrid",league:"LaLiga",nation:"Uruguay",price:420000,fc_ksa_score:89}
+];
+
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+
+function renderPlayers(players){
+ const box=document.getElementById("playersGrid");
+ box.innerHTML=players.slice(0,5).map(x=>`
+  <article class="player-card">
+    <div class="player-top"><span class="position">${esc(x.position)}</span><span class="rating">${esc(x.rating)}</span></div>
+    <div class="player-photo">
+      ${x.player_image
+        ? `<img src="${esc(x.player_image)}" alt="${esc(x.name)}" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="fallback" style="display:none">👤</div>`
+        : `<div class="fallback">👤</div>`}
+    </div>
+    <div class="player-name">${esc(x.name).toUpperCase()}</div>
+    <div class="player-meta">${esc(x.nation||"")} · ${esc(x.club||"")}</div>
+    <div class="price">🪙 ${Number(x.price||0).toLocaleString("en-US")}</div>
+    <div class="score">FC KSA SCORE: <b>${esc(x.fc_ksa_score??"-")}</b></div>
+  </article>`).join("");
+}
+
+async function loadFCKSA(){
+ renderPlayers(fallbackPlayers);
+ try{
+   const r=await fetch(FCKSA_API+"/players?select=*&order=rating.desc",{
+     headers:{apikey:FCKSA_KEY,Authorization:"Bearer "+FCKSA_KEY}
+   });
+   if(!r.ok) throw new Error("Supabase "+r.status);
+   const players=await r.json();
+   if(players.length){
+     renderPlayers(players);
+     document.getElementById("playersLive").textContent="● بيانات اللاعبين متصلة مباشرة بقاعدة FC KSA";
+     document.getElementById("scoreName").textContent=players[0].name||"Mbappé";
+     document.getElementById("scoreValue").textContent=players[0].fc_ksa_score??94;
+   }
+ }catch(err){
+   console.error(err);
+   document.getElementById("playersLive").textContent="● تعذر الاتصال مؤقتاً — يتم عرض البيانات الاحتياطية";
+ }
+}
+
+function fakeAsk(){
+ const q=document.getElementById("ask").value.trim();
+ document.getElementById("askAnswer").textContent=q ? "ميزة Ask FC KSA ستتصل بمحرك البحث الذكي في المرحلة القادمة." : "اكتب سؤالك أولاً.";
+}
+
+document.addEventListener("DOMContentLoaded",loadFCKSA);
+</script>
+</body>
+</html>
